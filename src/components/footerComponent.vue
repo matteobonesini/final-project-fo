@@ -2,14 +2,13 @@
 export default {
   data() {
     return {
-      msg: "",
+      msg: "FOOTER",
     };
   },
 };
 </script>
 
 <template>
-  Template
   <h1>{{ msg }}</h1>
 </template>
 
