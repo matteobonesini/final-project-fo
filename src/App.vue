@@ -4,7 +4,9 @@ import mainComponent from "./components/mainComponent.vue";
 import footerComponent from "./components/footerComponent.vue";
 
 export default {
-  data() {},
+  data() {
+    return {}
+  },
   components: {
     headerComponent,
     mainComponent,
