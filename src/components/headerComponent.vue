@@ -13,8 +13,7 @@ export default {
     <nav>
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <router-link :to="{ name: 'home' }" class="flex items-center">
-          <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">BDeveloper</span>
+          <img src="/LogoSmallRid.png" class="h-8 mr-3 w-48 h-12 object-cover" alt="BDeveloper Logo" />
         </router-link>
         <button data-collapse-toggle="navbar-default" type="button"
           class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -44,6 +43,6 @@ export default {
 
 <style scoped>
 header {
-  height: 70px;
+  height: 80px;
 }
 </style>
