@@ -9,7 +9,13 @@ export default {
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  <footer class="flex justify-center items-center bg-zinc-200 dark:bg-zinc-900 text-black dark:text-white">
+    <p>&copy; BDeveloper - 2023</p>
+  </footer>
 </template>
 
-<style scoped></style>
+<style scoped>
+footer {
+  height: 70px;
+}
+</style>

@@ -13,7 +13,14 @@ export default {
 </script>
 
 <template>
-  <RouterView />
+  <main class="bg-zinc-50 dark:bg-zinc-950 text-black dark:text-white">
+    <RouterView />
+  </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+main {
+  /* altezza viewport - altezza header e footer */
+  min-height: calc(100vh - 140px);
+}
+</style>
