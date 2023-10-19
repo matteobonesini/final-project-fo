@@ -103,9 +103,9 @@ export default {
                 <div
                     class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-full">
                     <div>
-                        <img v-if="developer.profile_picture" class="rounded-lg w-full object-cover"
+                        <img v-if="developer.profile_picture" class="rounded-lg w-full object-cover aspect-square"
                             :src="developer.full_img_src" :alt="developer.user.name" />
-                        <img v-else class="rounded-lg w-full object-cover"
+                        <img v-else class="rounded-lg w-full object-cover aspect-square"
                             :src="'https://placehold.co/600x600/1dbf73/FFF/?text=' + developer.user.name"
                             :alt="developer.user.name">
                     </div>
