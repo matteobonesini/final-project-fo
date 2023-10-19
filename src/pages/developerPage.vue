@@ -64,7 +64,7 @@ export default {
                 <starVoteComponent :avgVote="developer.average_vote" :numberReview="developer.reviews.length" />
                 <!-- Button for see the cv and edit profile -->
                 <div>
-                    <a class="me-5" :href="developer.full_cv_src">
+                    <a v-if="developer.curriculum" class="me-5" :href="developer.full_cv_src">
                         <button class="btn-primary">Curriculum</button>
                     </a>
                 </div>
