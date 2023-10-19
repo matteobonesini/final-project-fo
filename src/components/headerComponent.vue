@@ -11,7 +11,7 @@ export default {
 <template>
   <header class="bg-zinc-200 dark:bg-zinc-900 text-black dark:text-white">
     <nav>
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div class="flex flex-wrap items-center justify-between mx-auto py-4 px-10">
         <router-link :to="{ name: 'home' }" class="flex items-center">
           <img src="/LogoSmallRid.png" class="h-12 mr-3 w-48 object-cover" alt="BDeveloper Logo" />
         </router-link>
@@ -31,7 +31,8 @@ export default {
                 :class="this.$route.name == 'home' ? 'text-[--primary]' : ''">Home</router-link>
             </li>
             <li>
-              <router-link :to="{ name: 'search' }" class="block py-2 pl-3 pr-4 hover:text-[--tertiary]"
+              <router-link :to="{ name: 'search', params: { search: 'null' } }"
+                class="block py-2 pl-3 pr-4 hover:text-[--tertiary]"
                 :class="this.$route.name == 'search' ? 'text-[--primary]' : ''">Ricerca</router-link>
             </li>
           </ul>

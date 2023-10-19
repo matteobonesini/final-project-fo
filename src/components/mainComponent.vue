@@ -14,9 +14,7 @@ export default {
 
 <template>
   <main class="bg-zinc-50 dark:bg-zinc-950 text-black dark:text-white">
-    <div class="container mx-auto">
-      <RouterView />
-    </div>
+    <RouterView />
   </main>
 </template>
 

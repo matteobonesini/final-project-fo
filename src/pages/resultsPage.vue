@@ -19,6 +19,7 @@ export default {
         };
     },
     created() {
+        this.work_field = this.$route.params.search;
         this.axiosCall('work-fields');
         this.axiosCall('votes');
         this.getDevelopers()
@@ -98,8 +99,8 @@ export default {
         <div v-if="!loading" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 py-10">
             <router-link :to="{ name: 'developer', params: { id: developer.user.id } }" v-for="developer in developers">
                 <div
-                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-full">
-                    <div>
+                    class="bg-gray-300 border border-gray-200 rounded-lg shadow  dark:bg-gray-900 dark:border-gray-700 h-full">
+                    <div class="p-5">
                         <img v-if="developer.profile_picture" class="rounded-lg w-full object-cover aspect-square"
                             :src="developer.full_img_src" :alt="developer.user.name" />
                         <img v-else class="rounded-lg w-full object-cover aspect-square"
@@ -110,10 +111,10 @@ export default {
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{
                             developer.user.name }}</h5>
                         <span v-if="developer.active_sponsorship"
-                            class="bg-[--primary] text-white text-sm font-medium px-2.5 py-0.5 rounded dark:bg-[--dark-primary] dark:text-zinc-950 leading-5">Sponsorizzato</span>
+                            class="bg-[--tertiary] text-white text-sm font-medium px-2.5 py-0.5 rounded dark:bg-[--dark-tertiary] dark:text-zinc-950 leading-5">Sponsorizzato</span>
                         <starVoteComponent :avgVote="developer.average_vote" :numberReview="developer.reviews.length" />
                         <button
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[--tertiary] focus:ring-4 focus:outline-none dark:bg-[--dark-tertiary]">
                             Read more
                             <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 14 10">
