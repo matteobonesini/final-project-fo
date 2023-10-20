@@ -48,18 +48,18 @@ export default {
 </script>
 
 <template>
-    <div class="container mx-auto py-10">
-        <section class="bg-gray-300 dark:bg-gray-900 rounded-xl">
+    <div class="container mx-auto py-10 px-4">
+        <section class="bg-zinc-300 dark:bg-zinc-800 rounded-xl">
             <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
                 <h1
                     class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                    <span class="text-[--primary] dark:text-[--dark-primary]">B</span>Developers
+                    <span class="text-[--primary] dark:text-[--dark-primary]">B</span>Developer
                 </h1>
                 <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">Il luogo
                     dove gli sviluppatori creano il tuo futuro.</p>
-                <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+                <div class="flex flex-col space-y-4 sm:space-y-0 md:flex-row sm:justify-center space-x-4">
                     <select id="countries" v-model="workField"
-                        class="w-1/2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        class="sm:w-full md:w-1/2 bg-zinx-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-zinc-900 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
                         <option selected value="null">Cerca uno sviluppatore per categoria</option>
                         <option v-for="workField in workFields" :value="workField.id">{{ workField.name }}</option>
                     </select>

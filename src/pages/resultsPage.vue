@@ -68,7 +68,7 @@ export default {
                 <label for="work_fields" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Campo
                     di Lavoro</label>
                 <select id="work_fields" @change="getDevelopers()" v-model="work_field"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    class="bg-zinx-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-zinc-800 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
                     <option selected value="null">Seleziona un Campo di Lavoro</option>
                     <option v-for="workField in workFields" :value="workField.id">{{ workField.name }}</option>
                 </select>
@@ -78,7 +78,7 @@ export default {
                 <label for="vote" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Voto
                     Medio</label>
                 <select id="vote" @change="getDevelopers()" v-model="vote" :disabled="work_field == 'null'"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    class="bg-zinx-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-zinc-800 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 disabled:bg-zinc-100 dark:disabled:bg-zinc-900 disabled:text-zinc-200 dark:disabled:text-zinc-700">
                     <option selected value="null">Seleziona un Voto Medio</option>
                     <option v-for="vote in votes" :value="vote.value">{{ vote.name }}
                         {{ vote.name != 'Ottimo' ? ' e migliore' : '' }}</option>
@@ -89,7 +89,7 @@ export default {
                 <label for="reviews" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Numero Di
                     Recensioni</label>
                 <select id="reviews" @change="getDevelopers()" v-model="reviews" :disabled="work_field == 'null'"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    class="bg-zinx-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-zinc-800 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 disabled:bg-zinc-100 dark:disabled:bg-zinc-900 disabled:text-zinc-200 dark:disabled:text-zinc-700">
                     <option selected value="null">Seleziona un Numero di Recensioni</option>
                     <option v-for="index in 5" :value="index">{{ index }} e più</option>
                 </select>
@@ -98,8 +98,7 @@ export default {
 
         <div v-if="!loading" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 py-10">
             <router-link :to="{ name: 'developer', params: { id: developer.user.id } }" v-for="developer in developers">
-                <div
-                    class="bg-gray-300 border border-gray-200 rounded-lg shadow  dark:bg-gray-900 dark:border-gray-700 h-full">
+                <div class="bg-zinc-300 rounded-lg shadow dark:bg-zinc-800 h-full">
                     <div class="p-5">
                         <img v-if="developer.profile_picture" class="rounded-lg w-full object-cover aspect-square"
                             :src="developer.full_img_src" :alt="developer.user.name" />
