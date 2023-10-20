@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <header class="bg-zinc-200 dark:bg-zinc-900 text-black dark:text-white">
+  <header class="bg-[--tertiary] dark:bg-zinc-900 text-[--dark-text]">
     <nav>
       <div class="flex flex-wrap items-center justify-between mx-auto py-4 px-10">
         <router-link :to="{ name: 'home' }" class="flex items-center">
@@ -27,13 +27,13 @@ export default {
         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul class="font-medium flex flex-col md:flex-row">
             <li>
-              <router-link :to="{ name: 'home' }" class="block py-2 pl-3 pr-4 hover:text-[--tertiary]"
-                :class="this.$route.name == 'home' ? 'text-[--primary]' : ''">Home</router-link>
+              <router-link :to="{ name: 'home' }" class="block py-2 pl-3 pr-4 hover:text-[--primary]"
+                :class="this.$route.name == 'home' ? 'text-black dark:text-white underline decoration-4 underline-offset-8' : ''">Home</router-link>
             </li>
             <li>
               <router-link :to="{ name: 'search', params: { search: 'null' } }"
-                class="block py-2 pl-3 pr-4 hover:text-[--tertiary]"
-                :class="this.$route.name == 'search' ? 'text-[--primary]' : ''">Ricerca</router-link>
+                class="block py-2 pl-3 pr-4 hover:text-[--primary]"
+                :class="this.$route.name == 'search' ? 'text-black dark:text-white underline decoration-4 underline-offset-8' : ''">Ricerca</router-link>
             </li>
           </ul>
         </div>
