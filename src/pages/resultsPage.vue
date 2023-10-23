@@ -66,7 +66,7 @@ export default {
                 <label for="work_fields" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Campo
                     di Lavoro</label>
                 <select id="work_fields" @change="getDevelopers()" v-model="store.work_field"
-                    class="bg-zinx-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-zinc-800 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+                    class="bg-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-zinc-800 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
                     <option selected value="null">Seleziona un Campo di Lavoro</option>
                     <option v-for="workField in workFields" :value="workField.id">{{ workField.name }}</option>
                 </select>
@@ -76,7 +76,7 @@ export default {
                 <label for="vote" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Voto
                     Medio</label>
                 <select id="vote" @change="getDevelopers()" v-model="store.vote" :disabled="store.work_field == 'null'"
-                    class="bg-zinx-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-zinc-800 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 disabled:bg-zinc-100 dark:disabled:bg-zinc-900 disabled:text-zinc-200 dark:disabled:text-zinc-700">
+                    class="bg-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-zinc-800 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 disabled:bg-zinc-100 dark:disabled:bg-zinc-900 disabled:text-zinc-200 dark:disabled:text-zinc-700">
                     <option selected value="null">Seleziona un Voto Medio</option>
                     <option v-for="vote in votes" :value="vote.value">{{ vote.name }}
                         {{ vote.name != 'Ottimo' ? ' e migliore' : '' }}</option>
@@ -88,7 +88,7 @@ export default {
                     Recensioni</label>
                 <select id="reviews" @change="getDevelopers()" v-model="store.reviews"
                     :disabled="store.work_field == 'null'"
-                    class="bg-zinx-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-zinc-800 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 disabled:bg-zinc-100 dark:disabled:bg-zinc-900 disabled:text-zinc-200 dark:disabled:text-zinc-700">
+                    class="bg-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-zinc-800 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 disabled:bg-zinc-100 dark:disabled:bg-zinc-900 disabled:text-zinc-200 dark:disabled:text-zinc-700">
                     <option selected value="null">Seleziona un Numero di Recensioni</option>
                     <option v-for="index in [3, 6, 9, 12, 15]" :value="index">{{ index }} e più</option>
                 </select>

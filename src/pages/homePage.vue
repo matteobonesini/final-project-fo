@@ -60,7 +60,7 @@ export default {
                     dove gli sviluppatori creano il tuo futuro.</p>
                 <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row sm:justify-center space-x-4">
                     <select id="countries" v-model="store.work_field"
-                        class="sm:w-full md:w-1/2 bg-zinx-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-zinc-900 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+                        class="sm:w-full md:w-1/2 bg-zinc-100 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-zinc-900 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
                         <option selected value="null">Cerca uno sviluppatore per categoria</option>
                         <option v-for="workField in workFields" :value="workField.id">{{ workField.name }}</option>
                     </select>
