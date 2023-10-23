@@ -29,11 +29,11 @@ export default {
           <ul class="font-medium flex flex-col md:flex-row">
             <li>
               <router-link :to="{ name: 'home' }" class="block py-2 pl-3 pr-4 hover:text-[--primary]"
-                :class="this.$route.name == 'home' ? 'text-black dark:text-white underline decoration-4 underline-offset-8' : ''">Home</router-link>
+                :class="this.$route.name == 'home' ? ' dark:text-white underline decoration-4 underline-offset-8' : ''">Home</router-link>
             </li>
             <li>
               <router-link :to="{ name: 'search' }" class="block py-2 pl-3 pr-4 hover:text-[--primary]"
-                :class="this.$route.name == 'search' ? 'text-black dark:text-white underline decoration-4 underline-offset-8' : ''">Ricerca</router-link>
+                :class="this.$route.name == 'search' ? 'dark:text-white underline decoration-4 underline-offset-8' : ''">Ricerca</router-link>
             </li>
             <li>
               <a class="block py-2 pl-3 pr-4 hover:text-[--primary]" href="http://127.0.0.1:8000/login">Login</a>
