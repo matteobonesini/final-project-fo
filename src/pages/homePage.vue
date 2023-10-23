@@ -1,13 +1,14 @@
 <script>
 
 import axios from 'axios';
+import { store } from '../store.js';
 
 export default {
     data() {
         return {
+            store,
             workFields: [],
-            workField: 'null',
-            developers: null
+            developers: []
         };
     },
     created() {
@@ -57,13 +58,13 @@ export default {
                 </h1>
                 <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">Il luogo
                     dove gli sviluppatori creano il tuo futuro.</p>
-                <div class="flex flex-col space-y-4 sm:space-y-0 md:flex-row sm:justify-center space-x-4">
-                    <select id="countries" v-model="workField"
+                <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row sm:justify-center space-x-4">
+                    <select id="countries" v-model="store.work_field"
                         class="sm:w-full md:w-1/2 bg-zinx-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-zinc-900 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
                         <option selected value="null">Cerca uno sviluppatore per categoria</option>
                         <option v-for="workField in workFields" :value="workField.id">{{ workField.name }}</option>
                     </select>
-                    <router-link :to="{ name: 'search', params: { search: workField } }">
+                    <router-link :to="{ name: 'search' }">
                         <button type="button"
                             class="focus:outline-none text-white bg-[--primary] hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-[--dark-primary] dark:hover:bg-green-700 dark:focus:ring-green-800">Cerca</button>
                     </router-link>
