@@ -36,7 +36,7 @@ export default {
 
 <template>
     <div v-if="developer" class="container mx-auto py-16 px-4">
-        <div class="sm:w-full lg:w-4/5 mx-auto flex flex-wrap justify-center md:justify-start md:flex-nowrap mb-10">
+        <div class="sm:w-full lg:w-4/5 mx-auto flex flex-col items-center md:justify-start md:flex-row gap-2 mb-10">
             <!-- Profile Picture -->
             <div class="mb-10 md:mb-0 me-0 md:me-10">
                 <img v-if="developer.profile_picture" class="rounded-lg w-48 object-cover mx-auto"
@@ -45,16 +45,14 @@ export default {
                     :src="'https://placehold.co/600x600/1dbf73/FFF/?text=' + developer.user.name"
                     :alt="developer.user.name">
             </div>
-            <div>
+            <div class="flex flex-col items-center md:items-start">
                 <!-- Developer Name -->
-                <h2 class="text-4xl font-bold flex flex-wrap md:flex-nowrap">
-                    <span class="align-middle leading-5">{{ developer.user.name }}</span>
-                    <span v-if="developer.active_sponsorship"
-                        class="bg-[--primary] text-white text-sm font-medium mt-5 md:mt-0 md-0 md:ms-5 px-2.5 py-0.5 rounded dark:bg-[--dark-primary] dark:text-zinc-950 leading-5">Sponsorizzato</span>
-
-                </h2>
+                <h2 class="text-4xl font-bold">{{ developer.user.name }}</h2>
                 <!-- Developer Average Vote -->
                 <starVoteComponent :avgVote="developer.average_vote" :numberReview="developer.reviews.length" />
+                <span v-if="developer.active_sponsorship"
+                    class="bg-[--primary] text-white text-sm font-medium mt-2 px-2.5 py-0.5 rounded dark:bg-[--dark-primary] dark:text-zinc-950 leading-5">In
+                    Evidenza</span>
             </div>
         </div>
 
