@@ -74,13 +74,13 @@ export default {
         </section>
 
         <section class="mt-10">
-            <h5 class="text-center text-black dark:text-white text-3xl font-bold">Scopri i servizi dei nostri sponsor</h5>
+            <h5 class="text-center text-black dark:text-white text-3xl font-bold">Scopri i servizi dei nostri sviluppatori
+                in evidenza</h5>
             <div v-if="developers" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 py-10">
                 <router-link :to="{ name: 'developer', params: { id: developer.user.id } }" class="mx-auto"
                     v-for="developer in developers" href="">
                     <img :src="developer.full_img_src" class="rounded-full h-56 w-56 object-cover">
-                    <p class="text-center mt-3 text-lg font-semibold">{{ developer.user.name }}<span
-                            class="bg-[--primary] text-white text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-[--dark-primary] dark:text-zinc-950 leading-5 ms-5">S</span>
+                    <p class="text-center mt-3 text-lg font-semibold">{{ developer.user.name }}
                     </p>
                 </router-link>
             </div>
