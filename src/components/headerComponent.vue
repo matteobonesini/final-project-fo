@@ -11,9 +11,9 @@ export default {
 <template>
   <header class="bg-[--tertiary] dark:bg-zinc-900 text-[--dark-text] md:h-20 sticky top-0">
     <nav>
-      <div class="flex flex-wrap items-center justify-between mx-auto py-4 px-10">
+      <div class="flex flex-wrap items-center justify-between mx-auto py-4 px-5 md:px-10">
         <router-link :to="{ name: 'home' }" class="flex items-center">
-          <img src="/LogoSmallRid.png" class="h-12 mr-3 w-48 object-cover" alt="BDeveloper Logo" />
+          <img src="/logo-hor-final.png" class="h-12 mr-3 w-48 object-cover" alt="BDeveloper Logo" />
         </router-link>
         <button data-collapse-toggle="navbar-default" type="button" @click="showMenu = !showMenu"
           class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden"
