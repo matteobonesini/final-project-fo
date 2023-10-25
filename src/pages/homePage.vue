@@ -52,10 +52,16 @@ export default {
     <div class="container mx-auto py-10 px-4">
         <section class="bg-zinc-300 dark:bg-zinc-800 rounded-xl">
             <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
-                <h1
+                <!-- <h1
                     class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                     <span class="text-[--primary] dark:text-[--dark-primary]">B</span>Developer
-                </h1>
+                </h1> -->
+                <div class="flex flex-col items-center">
+                    <img class="w-3/4 md:w-1/2 lg:w-2/5" src="/logo-ver-final.png" alt="BDeveloper">
+                    <h1
+                        class="my-4 text-4xl uppercase font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                        BDeveloper</h1>
+                </div>
                 <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">Il luogo
                     dove gli sviluppatori creano il tuo futuro.</p>
                 <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row sm:justify-center space-x-4">
