@@ -96,33 +96,69 @@ export default {
         </div>
 
         <div v-if="!loading" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 py-10">
-            <router-link :to="{ name: 'developer', params: { id: developer.user.id } }" v-for="developer in developers">
-                <div class="bg-zinc-300 rounded-lg shadow dark:bg-zinc-800 h-full">
-                    <div class="p-5">
-                        <img v-if="developer.profile_picture" class="rounded-lg w-full object-cover aspect-square"
-                            :src="developer.full_img_src" :alt="developer.user.name" />
-                        <img v-else class="rounded-lg w-full object-cover aspect-square"
-                            :src="'https://placehold.co/600x600/1dbf73/FFF/?text=' + developer.user.name"
-                            :alt="developer.user.name">
+
+            <template v-for="developer in developers">
+                <!-- sponsorship developer -->
+                <router-link :to="{ name: 'developer', params: { id: developer.user.id } }"
+                    v-if="developer.active_sponsorship">
+                    <div class="bg-zinc-300 rounded-lg shadow dark:bg-zinc-800 h-full">
+                        <div class="p-5">
+                            <img v-if="developer.profile_picture" class="rounded-lg w-full object-cover aspect-square"
+                                :src="developer.full_img_src" :alt="developer.user.name" />
+                            <img v-else class="rounded-lg w-full object-cover aspect-square"
+                                :src="'https://placehold.co/600x600/1dbf73/FFF/?text=' + developer.user.name"
+                                :alt="developer.user.name">
+                        </div>
+                        <div class="p-5">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{
+                                developer.user.name }}</h5>
+                            <span
+                                class="bg-[--tertiary] text-white text-sm font-medium px-2.5 py-0.5 rounded dark:bg-[--dark-tertiary] dark:text-zinc-950 leading-5">In
+                                Evidenza</span>
+                            <starVoteComponent :avgVote="developer.average_vote" :numberReview="developer.reviews.length" />
+                            <button
+                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[--tertiary] focus:ring-4 focus:outline-none dark:bg-[--dark-tertiary]">
+                                Read more
+                                <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
-                    <div class="p-5">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{
-                            developer.user.name }}</h5>
-                        <span v-if="developer.active_sponsorship"
-                            class="bg-[--tertiary] text-white text-sm font-medium px-2.5 py-0.5 rounded dark:bg-[--dark-tertiary] dark:text-zinc-950 leading-5">Sponsorizzato</span>
-                        <starVoteComponent :avgVote="developer.average_vote" :numberReview="developer.reviews.length" />
-                        <button
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[--tertiary] focus:ring-4 focus:outline-none dark:bg-[--dark-tertiary]">
-                            Read more
-                            <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M1 5h12m0 0L9 1m4 4L9 9" />
-                            </svg>
-                        </button>
+                </router-link>
+            </template>
+
+            <template v-for="developer in developers">
+                <!-- not sponsorship developer -->
+                <router-link :to="{ name: 'developer', params: { id: developer.user.id } }"
+                    v-if="!developer.active_sponsorship">
+                    <div class="bg-zinc-300 rounded-lg shadow dark:bg-zinc-800 h-full">
+                        <div class="p-5">
+                            <img v-if="developer.profile_picture" class="rounded-lg w-full object-cover aspect-square"
+                                :src="developer.full_img_src" :alt="developer.user.name" />
+                            <img v-else class="rounded-lg w-full object-cover aspect-square"
+                                :src="'https://placehold.co/600x600/1dbf73/FFF/?text=' + developer.user.name"
+                                :alt="developer.user.name">
+                        </div>
+                        <div class="p-5">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{
+                                developer.user.name }}</h5>
+                            <starVoteComponent :avgVote="developer.average_vote" :numberReview="developer.reviews.length" />
+                            <button
+                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[--tertiary] focus:ring-4 focus:outline-none dark:bg-[--dark-tertiary]">
+                                Read more
+                                <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </router-link>
+                </router-link>
+            </template>
         </div>
         <div v-else class="flex items-center justify-center w-full h-56">
             <div role="status">
