@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <header class="bg-[--tertiary] dark:bg-zinc-900 text-[--dark-text] md:h-20 sticky top-0">
+  <header class="bg-[--tertiary] dark:bg-zinc-900 text-[--dark-text] md:h-20 sticky top-0 z-10">
     <nav>
       <div class="flex flex-wrap items-center justify-between mx-auto py-4 px-5 md:px-10">
         <router-link :to="{ name: 'home' }" class="flex items-center">

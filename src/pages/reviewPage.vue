@@ -1,8 +1,12 @@
 <script>
 
 import axios from 'axios';
+import modalComponent from '../components/modalComponent.vue';
 
 export default {
+    components: {
+        modalComponent
+    },
     data() {
         return {
             customerName: null,
@@ -26,9 +30,6 @@ export default {
                         console.log(response.data)
                         this.error = false
                         this.success = true;
-                        setTimeout(() => {
-                            this.$router.push({ name: 'developer', params: { id: this.$route.params.id } })
-                        }, 5000);
                     })
                     .catch((error) => {
                         this.success = false;
@@ -41,18 +42,15 @@ export default {
 </script>
 
 <template>
-    <div class="container px-5 w-full md:w-3/5  mx-auto">
+    <div class="container px-5 w-full md:w-3/5  mx-auto relative">
+        <modalComponent v-if="success" :id="this.$route.params.id" :name="this.$route.query.dev"
+            message="Inviata con successo!" />
         <form @submit.prevent="sendReview()" class="pt-10">
             <h2 class="text-xl font-bold mb-5 text-[--tertiary] dark:text-[--dark-tertiary]">Scrivi una recensione su {{
                 this.$route.query.dev }}</h2>
             <div v-if="error" class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
                 role="alert">
-                Errore nell'invio del messaggio! Controlla i campi del form e riprova.
-            </div>
-            <div v-if="success"
-                class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
-                role="alert">
-                Inviato con successo!
+                Errore nell'invio del recensione! Controlla i campi del form e riprova.
             </div>
             <div class="mb-6">
                 <label for="customer_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"><span
@@ -66,7 +64,7 @@ export default {
                         class="text-red-500 text-lg me-1">*</span>Voto</label>
                 <div class="flex items-center">
                     <select id="countries" v-model="vote" required
-                        class="w-1/6 me-5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+                        class="w-1/6 me-5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
                         <option value="0" selected>-</option>
                         <option value="1">1</option>
                         <option value="2">2</option>

@@ -102,19 +102,20 @@ export default {
                 <router-link :to="{ name: 'developer', params: { id: developer.user.id } }"
                     v-if="developer.active_sponsorship">
                     <div class="bg-zinc-300 rounded-lg shadow dark:bg-zinc-800 h-full">
-                        <div class="p-5">
+                        <div class="p-5 relative">
                             <img v-if="developer.profile_picture" class="rounded-lg w-full object-cover aspect-square"
                                 :src="developer.full_img_src" :alt="developer.user.name" />
                             <img v-else class="rounded-lg w-full object-cover aspect-square"
                                 :src="'https://placehold.co/600x600/1dbf73/FFF/?text=' + developer.user.name"
                                 :alt="developer.user.name">
+                            <span
+                                class="bg-[--tertiary] text-black text-sm font-medium px-2.5 py-0.5 rounded dark:bg-[--dark-tertiary] dark:text-black leading-5 absolute left-6 bottom-6">In
+                                Evidenza</span>
                         </div>
                         <div class="p-5">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{
                                 developer.user.name }}</h5>
-                            <span
-                                class="bg-[--tertiary] text-white text-sm font-medium px-2.5 py-0.5 rounded dark:bg-[--dark-tertiary] dark:text-zinc-950 leading-5">In
-                                Evidenza</span>
+
                             <starVoteComponent :avgVote="developer.average_vote" :numberReview="developer.reviews.length" />
                             <button
                                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[--tertiary] focus:ring-4 focus:outline-none dark:bg-[--dark-tertiary]">
@@ -160,6 +161,8 @@ export default {
                 </router-link>
             </template>
         </div>
+
+        <!-- loading animation -->
         <div v-else class="flex items-center justify-center w-full h-56">
             <div role="status">
                 <svg aria-hidden="true" class="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
