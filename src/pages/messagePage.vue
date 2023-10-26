@@ -44,7 +44,7 @@ export default {
     <div class="container px-5 w-full md:w-3/5  mx-auto">
         <modalComponent v-if="success" :id="this.$route.params.id" :name="this.$route.query.dev"
             message="Inviato con successo!" />
-        <form @submit.prevent="sendMessage()" class="pt-10">
+        <form @submit.prevent="sendMessage()" class="pt-10 pb-1">
             <h2 class="text-xl font-bold mb-5 text-[--tertiary] dark:text-[--dark-tertiary]">Manda un messaggio a {{
                 this.$route.query.dev }}</h2>
             <div v-if="error" class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
