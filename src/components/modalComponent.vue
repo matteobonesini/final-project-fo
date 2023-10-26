@@ -1,9 +1,12 @@
 <script>
 export default {
     data() {
+        return {
+
+        }
     },
     props: {
-        id: Number,
+        id: String,
         name: String,
         message: String
     }
@@ -11,10 +14,10 @@ export default {
 </script>
 
 <template>
-    <div class="absolute top-0 left-0 w-full h-full bg-zinc-950">
-        <div class="absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%]">
+    <div class="absolute top-0 left-0 w-full h-full bg-zinc-950 z-1">
+        <div class="absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] w-3/4 lg:w-1/2">
             <div
-                class="bg-zinc-100 dark:bg-zinc-900 text-black dark:text-green-600 px-20 py-10 rounded-xl border-2 border-green-600 text-center">
+                class="bg-zinc-100 dark:bg-zinc-900 text-black dark:text-green-600 py-10 rounded-xl border-2 border-green-600 text-center">
                 <p>{{ message }}</p>
                 <router-link :to="{ name: 'developer', params: { id: id } }" class="block mt-5">
                     <button type="button"
