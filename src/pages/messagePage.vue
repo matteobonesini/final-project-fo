@@ -1,8 +1,12 @@
 <script>
 
 import axios from 'axios';
+import modalComponent from '../components/modalComponent.vue';
 
 export default {
+    components: {
+        modalComponent
+    },
     data() {
         return {
             name: null,
@@ -26,9 +30,6 @@ export default {
                 .then(response => {
                     this.error = false;
                     this.success = true;
-                    setTimeout(() => {
-                        this.$router.push({ name: 'developer', params: { id: this.$route.params.id } })
-                    }, 5000);
                 })
                 .catch((error) => {
                     this.success = false;
@@ -41,17 +42,14 @@ export default {
 
 <template>
     <div class="container px-5 w-full md:w-3/5  mx-auto">
+        <modalComponent v-if="success" :id="this.$route.params.id" :name="this.$route.query.dev"
+            message="Inviato con successo!" />
         <form @submit.prevent="sendMessage()" class="pt-10">
             <h2 class="text-xl font-bold mb-5 text-[--tertiary] dark:text-[--dark-tertiary]">Manda un messaggio a {{
                 this.$route.query.dev }}</h2>
             <div v-if="error" class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
                 role="alert">
                 Errore nell'invio del messaggio! Controlla i campi del form e riprova.
-            </div>
-            <div v-if="success"
-                class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
-                role="alert">
-                Inviato con successo!
             </div>
             <div class="mb-6">
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"><span
