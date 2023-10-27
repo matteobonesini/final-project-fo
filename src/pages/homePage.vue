@@ -81,7 +81,11 @@ export default {
             <div v-if="developers" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 py-10">
                 <router-link :to="{ name: 'developer', params: { id: developer.user.id } }" class="mx-auto"
                     v-for="developer in developers" href="">
-                    <img :src="developer.full_img_src" class="rounded-full h-56 w-56 object-cover">
+                    <img v-if="developer.profile_picture" class="rounded-full h-56 w-56 object-cover"
+                        :src="developer.full_img_src" :alt="developer.user.name">
+                    <img v-else class="rounded-full h-56 w-56 object-cover"
+                        :src="'https://placehold.co/600x600/1dbf73/FFF/?text=' + developer.user.name"
+                        :alt="developer.user.name">
                     <p class="text-center mt-3 text-lg font-semibold">{{ developer.user.name }}
                     </p>
                 </router-link>
