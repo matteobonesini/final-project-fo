@@ -53,7 +53,7 @@ export default {
         <section class="bg-zinc-300 dark:bg-zinc-800 rounded-xl">
             <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
                 <div class="flex flex-col items-center">
-                    <img class="w-3/4 md:w-2/5" src="/logo-ver-final.png" alt="BDeveloper">
+                    <img class="w-3/4 md:w-2/5 lg:w-2/6" src="/logo-ver-final.png" alt="BDeveloper">
                     <h1
                         class="mt-2 mb-4 text-4xl uppercase font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                         BDeveloper</h1>
