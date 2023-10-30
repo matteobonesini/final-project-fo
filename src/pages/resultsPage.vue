@@ -119,7 +119,7 @@ export default {
                             <starVoteComponent :avgVote="developer.average_vote" :numberReview="developer.reviews.length" />
                             <button
                                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[--tertiary] focus:ring-4 focus:outline-none dark:bg-[--dark-tertiary]">
-                                Read more
+                                Dettaglio profilo
                                 <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 14 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -149,7 +149,7 @@ export default {
                             <starVoteComponent :avgVote="developer.average_vote" :numberReview="developer.reviews.length" />
                             <button
                                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[--tertiary] focus:ring-4 focus:outline-none dark:bg-[--dark-tertiary]">
-                                Read more
+                                Dettaglio profilo
                                 <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 14 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
