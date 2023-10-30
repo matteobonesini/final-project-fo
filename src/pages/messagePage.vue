@@ -53,14 +53,14 @@ export default {
             </div>
             <div class="mb-6">
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"><span
-                        class="text-red-500 text-lg me-1">*</span>Nome</label>
+                        class="text-red-500 text-lg me-1">*</span>Nome cliente</label>
                 <input v-model="name" type="text" id="name" maxlength="255"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-zinc-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required>
             </div>
             <div class="mb-6">
                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"><span
-                        class="text-red-500 text-lg me-1">*</span>Email</label>
+                        class="text-red-500 text-lg me-1">*</span>Email cliente</label>
                 <input v-model="email" type="email" id="email"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-zinc-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required>
