@@ -1,6 +1,6 @@
 # BDeveloper
 
-<img src="./public/preview.png" alt="preview" width="500px"/>
+![preview](./public/preview.png)
 
 Questo è BDeveloper, ovvero un sito che permette di cercare uno sviluppatore specializzato in un determinato ambito e chiedere un appuntamento. 
 
@@ -15,4 +15,4 @@ Fork del [progetto originale](https://github.com/FraFra2/bdevelopers-fe) con lo 
 
 Front-Office: [final-project-fo](https://github.com/matteobonesini/final-project-fo)
 
-Back-Office: [final-progect-bo](#)
+Back-Office: [final-progect-bo](https://github.com/matteobonesini/final-project-bo)
