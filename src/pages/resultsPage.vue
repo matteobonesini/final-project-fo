@@ -1,7 +1,6 @@
 <script>
 
 import axios from 'axios';
-import { store } from '../store.js';
 import starVoteComponent from '../components/starVoteComponent.vue';
 
 export default {
@@ -10,7 +9,9 @@ export default {
     },
     data() {
         return {
-            store,
+            work_field: this.$store.state.work_field,
+            vote: this.$store.state.vote,
+            reviews: this.$store.state.reviews,
             loading: false,
             workFields: [],
             votes: [],
@@ -41,8 +42,11 @@ export default {
         getDevelopers() {
             if (!this.loading) {
                 this.loading = true;
+                this.setWorkField();
+                this.setVote();
+                this.setReviews();
                 axios
-                    .get(`http://127.0.0.1:8000/api/developers/${this.store.work_field}-${this.store.vote}-${this.store.reviews}`)
+                    .get(`http://127.0.0.1:8000/api/developers/${this.$store.state.work_field}-${this.$store.state.vote}-${this.$store.state.reviews}`)
                     .then(response => {
                         this.developers = response.data.results;
                         this.loading = false;
@@ -53,6 +57,15 @@ export default {
                         }
                     })
             }
+        },
+        setWorkField() {
+            this.$store.dispatch("setWork", this.work_field).then(() => { });
+        },
+        setVote() {
+            this.$store.dispatch("setVote", this.vote).then(() => { });
+        },
+        setReviews() {
+            this.$store.dispatch("setReviews", this.reviews).then(() => { });
         }
     },
 };
@@ -65,7 +78,7 @@ export default {
             <div>
                 <label for="work_fields" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Campo
                     di Lavoro</label>
-                <select id="work_fields" @change="getDevelopers()" v-model="store.work_field"
+                <select id="work_fields" @change="getDevelopers()" v-model="work_field"
                     class="bg-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-zinc-800 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
                     <option selected value="null">Seleziona un Campo di Lavoro</option>
                     <option v-for="workField in workFields" :value="workField.id">{{ workField.name }}</option>
@@ -75,7 +88,7 @@ export default {
             <div>
                 <label for="vote" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Voto
                     Medio</label>
-                <select id="vote" @change="getDevelopers()" v-model="store.vote" :disabled="store.work_field == 'null'"
+                <select id="vote" @change="getDevelopers()" v-model="vote" :disabled="work_field == 'null'"
                     class="bg-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-zinc-800 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 disabled:bg-zinc-100 dark:disabled:bg-zinc-900 disabled:text-zinc-200 dark:disabled:text-zinc-700">
                     <option selected value="null">Seleziona un Voto Medio</option>
                     <option v-for="vote in votes" :value="vote.value">{{ vote.name }}
@@ -86,8 +99,7 @@ export default {
             <div>
                 <label for="reviews" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Numero Di
                     Recensioni</label>
-                <select id="reviews" @change="getDevelopers()" v-model="store.reviews"
-                    :disabled="store.work_field == 'null'"
+                <select id="reviews" @change="getDevelopers()" v-model="reviews" :disabled="work_field == 'null'"
                     class="bg-zinc-200 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-zinc-800 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 disabled:bg-zinc-100 dark:disabled:bg-zinc-900 disabled:text-zinc-200 dark:disabled:text-zinc-700">
                     <option selected value="null">Seleziona un Numero di Recensioni</option>
                     <option v-for="index in [3, 6, 9, 12, 15]" :value="index">{{ index }} e più</option>

@@ -16,9 +16,11 @@ export default {
 </script>
 
 <template>
-  <headerComponent />
-  <mainComponent />
-  <footerComponent />
+  <div>
+    <headerComponent />
+    <mainComponent />
+    <footerComponent />
+  </div>
 </template>
 
 <style scoped></style>

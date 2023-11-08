@@ -21,7 +21,6 @@ export default {
             axios
                 .get(`http://127.0.0.1:8000/api/developer/${this.$route.params.id}`)
                 .then(response => {
-                    console.log(response.data.result);
                     this.developer = response.data.result;
                 })
                 .catch((error) => {
