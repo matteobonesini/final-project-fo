@@ -1,7 +1,18 @@
-# Vue 3 + Vite
+# BDeveloper
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+<img src="./public/preview.png" alt="preview" width="500px"/>
 
-## Recommended IDE Setup
+Questo è BDeveloper, ovvero un sito che permette di cercare uno sviluppatore specializzato in un determinato ambito e chiedere un appuntamento. 
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Gli sviluppatori hanno invece la possibilità di:
+- Registrarsi e gestire i dati del proprio profilo,
+- Vedere i messaggi ricevuti,
+- Vedere le recensioni rilasciate su di lui,
+- Vedere le proprie statistiche di andamento,
+- Sottoscrivere un abbonamento per aumentare la visibilità del proprio profilo.
+
+Fork del [progetto originale](https://github.com/FraFra2/bdevelopers-fe) con lo scopo di implementare miglioramenti.
+
+Front-Office: [final-project-fo](https://github.com/matteobonesini/final-project-fo)
+
+Back-Office: [final-progect-bo](#)
