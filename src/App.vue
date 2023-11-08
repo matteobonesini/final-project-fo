@@ -12,15 +12,25 @@ export default {
     mainComponent,
     footerComponent,
   },
+  created() {
+    this.setTheme();
+  },
+  methods: {
+    setTheme() {
+      if (this.$store.state.theme === 'dark' || (this.$store.state.theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    }
+  }
 };
 </script>
 
 <template>
-  <div>
-    <headerComponent />
-    <mainComponent />
-    <footerComponent />
-  </div>
+  <headerComponent />
+  <mainComponent />
+  <footerComponent />
 </template>
 
 <style scoped></style>

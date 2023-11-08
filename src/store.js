@@ -4,7 +4,8 @@ const store =  createStore({
     state: {
         work_field: 'null',
         vote: 'null',
-        reviews: 'null'
+        reviews: 'null',
+        theme: 'system'
     },
     mutations: {
         setWork(state, payload) {
@@ -15,6 +16,15 @@ const store =  createStore({
         },
         setReviews(state, payload) {
             state.reviews = payload;
+        },
+        setTheme(state, payload) {
+            if (payload === 'dark' || (payload === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark')
+            } else {
+                document.documentElement.classList.remove('dark')
+            }
+            state.theme = payload;
+            localStorage.theme = state.theme;
         }
     },
     actions: {
@@ -33,6 +43,12 @@ const store =  createStore({
         setReviews({commit}, payload) {
             return new Promise((resolve) => {
                 commit("setReviews", payload);
+                resolve();
+            });
+        },
+        setTheme({commit}, payload) {
+            return new Promise((resolve) => {
+                commit("setTheme", payload);
                 resolve();
             });
         },
