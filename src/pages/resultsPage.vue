@@ -121,7 +121,7 @@ export default {
                                 :src="'https://placehold.co/600x600/1dbf73/FFF/?text=' + developer.user.name"
                                 :alt="developer.user.name">
                             <span
-                                class="bg-[--tertiary] text-black text-sm font-medium px-2.5 py-0.5 rounded dark:bg-[--dark-tertiary] dark:text-black leading-5 absolute left-6 bottom-6">In
+                                class="bg-[--tertiary] text-white text-sm font-medium px-2.5 py-0.5 rounded dark:bg-[--dark-tertiary] dark:text-black leading-5 absolute left-6 bottom-6">In
                                 Evidenza</span>
                         </div>
                         <div class="p-5">
@@ -130,7 +130,7 @@ export default {
 
                             <starVoteComponent :avgVote="developer.average_vote" :numberReview="developer.reviews.length" />
                             <button
-                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[--tertiary] focus:ring-4 focus:outline-none dark:bg-[--dark-tertiary]">
+                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[--tertiary] focus:ring-4 focus:outline-none dark:bg-[--dark-tertiary] dark:text-black">
                                 Dettaglio profilo
                                 <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 14 10">
@@ -160,7 +160,7 @@ export default {
                                 developer.user.name }}</h5>
                             <starVoteComponent :avgVote="developer.average_vote" :numberReview="developer.reviews.length" />
                             <button
-                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[--tertiary] focus:ring-4 focus:outline-none dark:bg-[--dark-tertiary]">
+                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[--tertiary] focus:ring-4 focus:outline-none dark:bg-[--dark-tertiary] dark:text-black">
                                 Dettaglio profilo
                                 <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 14 10">

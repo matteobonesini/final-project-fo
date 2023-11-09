@@ -7,6 +7,18 @@ export default {
       themeStatus: 'Auto'
     };
   },
+  created() {
+    switch(this.$store.state.theme) {
+      case 'light': 
+        this.themeStatus = 'Chiaro';
+        break;
+      case 'dark':
+        this.themeStatus = 'Scuro';
+        break;
+      case 'system': 
+        this.themeStatus = 'Auto'
+    }
+  },
   methods: {
     setTheme() {
       switch (this.theme) {
@@ -32,7 +44,7 @@ export default {
 </script>
 
 <template>
-  <header class="bg-[--tertiary] dark:bg-zinc-900 text-[--dark-text] md:h-20 sticky top-0 z-10">
+  <header class="bg-green-900 dark:bg-zinc-900 text-[--dark-text] md:h-20 sticky top-0 z-10">
     <nav>
       <div class="flex flex-wrap items-center justify-between mx-auto py-4 px-5 md:px-10">
         <router-link :to="{ name: 'home' }" class="flex items-center">
@@ -51,7 +63,7 @@ export default {
           :class="{ 'block': showMenu, 'hidden': !showMenu }">
           <ul class="font-medium flex flex-col md:flex-row">
             <li>
-              <div class="block py-2 pl-3 pr-8 cursor-pointer" @click="setTheme()">
+              <div class="block py-2 pl-3 pr-8 cursor-pointer hover:text-[--primary]" @click="setTheme()">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                   stroke="currentColor" class="w-6 h-6 inline-block align-middle">
                   <path stroke-linecap="round" stroke-linejoin="round"

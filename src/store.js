@@ -5,7 +5,7 @@ const store =  createStore({
         work_field: 'null',
         vote: 'null',
         reviews: 'null',
-        theme: 'system'
+        theme: localStorage.theme ? localStorage.theme : 'system'
     },
     mutations: {
         setWork(state, payload) {

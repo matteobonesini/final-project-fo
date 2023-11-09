@@ -50,7 +50,7 @@ export default {
                 <!-- Developer Average Vote -->
                 <starVoteComponent :avgVote="developer.average_vote" :numberReview="developer.reviews.length" />
                 <span v-if="developer.active_sponsorship"
-                    class="bg-[--primary] text-white text-sm font-medium mt-2 px-2.5 py-0.5 rounded dark:bg-[--dark-primary] dark:text-zinc-950 leading-5">In
+                    class="bg-green-800 text-white text-sm font-medium mt-2 px-2.5 py-0.5 rounded dark:text-zinc-950 leading-5">In
                     Evidenza</span>
             </div>
         </div>
